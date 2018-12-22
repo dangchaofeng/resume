@@ -16,7 +16,7 @@ const info = {
     nickname: '煦千',
     firstName: 'Dang',
     lastName: 'Chaofeng',
-    slogan: '龟速爬行的前端开发者',
+    slogan: '',
     tips: 'Ctrl+p可以印本简历，打印时显示真名',
     education: '本科',
     phone: '15208235210',
