@@ -10,7 +10,7 @@ const info = {
     name: '党超峰',
     sex: '男',
     birthday: '1993-02-17',
-    workSince: '2015-7-10',
+    workSince: '2015-07-10',
     exp: ['工作', '年'],
     nickname: '煦千',
     firstName: 'Dang',
@@ -33,7 +33,7 @@ const info = {
     intro: {
         content: [
             '1. 注重团队沟通与协作并有很强的学习能力和解决问题能力，能在团队中认清自己的地位和职责，充分发挥自己的能力。',
-            '2. 熟练掌握原生js、vue、promise，喜欢思考，热爱实践，将自己从理论中引发的思想验证，总是相信能从最基础的东西解释现象。实现过自己的迷你vue、promise、class继承。',
+            '2. 熟练掌握原生js、vue、promise，喜欢思考，热爱实践，将自己从理论中引发的思想验证，总是相信能从最基础的东西解释现象。实现过自己的迷你vue、promise、class继承、vue虚拟列表，react虚拟列表。',
             '3. 工作积极主动，认真负责，考虑细致，承受能力强。'
         ]
         // technology: {
@@ -53,20 +53,35 @@ const info = {
                 {
                     title: '主要收获：',
                     content: [
-                        '学习并熟练了git小乌龟的使用，熟练使用了CAP构建标准项目的使用，熟悉了grunt的打包配置，例如：uglify，watch，browserify等插件配合',
+                        '学习并熟练git 常用命令，熟练使用sourceTree来管理本地git仓库',
+                        '熟练使用了CAP构建标准项目的使用，熟悉了grunt的打包配置，例如：uglify，watch，browserify等插件配合',
                         '基于项目需求，调整目录结构：划分静态资源和打包资源，划分公共方法、常量、model数据层文件；封装工具方法：使用es6+的proxy代理功能实现转换图标，转换颜色的公共方法等',
                         '在e2e中，设计vyper的构造和test case，区分本地和线上环境，并实现闭环容错逻辑，使代码的健壮性，可读性，维护性更高',
                         '理解了项目的工程化打包原理，其实@babel/core负责语法转义，@babel/preset-env是做转义预设，指定转义规则的。polyfill负责新的API垫片填充：当babel转义后，其实还有一些东西无法转义，比如es6+中的全局变量中的Promise, Object.assign()方法等，这就需要我们对当前环境进行一个polyfill，填充他们缺少的功能。（如果不填充，浏览器如果不认识Promise，那肯定运行的时候报错）',
                         '熟练了karma + qunit 的单元测试',
                         '熟练了Vyper(protractor+selenium)的e2e测试',
-                        '引入axios进行http请求， 封装axios拦截器，统一处理get请求的loading现象以及请求失败后的error弹窗效果。'
+                        '熟练了webdriverIO的e2e测试',
+                        '引入axios进行http请求， 封装axios拦截器，统一处理get请求的loading现象以及请求失败后的error弹窗效果',
+                        '了解学习了虚拟列表的概念，并通过vue和react实现自己的虚拟列表',
+                        '个人小项目练习使用：koa + mongodb 来实现自己的后台系统， 前端使用 vue + elementUI',
+                        '发现async/await语法函数中，形参中涉及当前上下文的，在await之后，会被洗刷掉',
+                        '深刻体会到：团队内部代码规范的重要性'
                     ]
                 }
             ],
             technology: [
                 {
                     title: '技术栈：',
-                    content: ['node', 'ui5', 'less', 'grunt', 'protractor+selenium', 'CAP', 'karma']
+                    content: [
+                        'node',
+                        'ui5',
+                        'less',
+                        'grunt',
+                        'protractor+selenium',
+                        'webdriverIO',
+                        'CAP',
+                        'karma'
+                    ]
                 }
             ]
         },
@@ -154,20 +169,22 @@ const info = {
     project: [
         {
             time: '2019.06-today',
-            title: '【CAP】customizing, 【freestyle】monitor',
+            title:
+                '【CAP】customizing, 【freestyle】monitor, 【freestyle】general】, 【freestyle】report】',
             intro: '大数据管理系统',
             description: '',
             tips: [
                 {
                     title:
-                        '负责monitor项目中的架构的升级改造，技术调研选型，框架模块搭建；负责customizing中的cds配置；负责端到端测试的技术调研及实现',
+                        '负责【freestyle】项目中的架构的升级改造，技术调研选型，框架模块搭建；负责【CAP】中的cds配置；负责端到端测试的技术调研及实现',
                     content: [
-                        '对monitor项目中的freestyle模式下，了解运行原理，并对其框架进行改造升级，分别对eslint校验的配置，karma运行单元测试获取代码覆盖率，基于grunt打包增加less编译css，浏览器自动刷新（watch + livereload），增加babel转义打包，使其适配es6+的新技术，并前端内部进行了技术分享',
-                        '在monitor项目中，基于freestyle调研并实现了基于UI5的单元格编辑，自定义的列筛选、数据排序、数据过滤功能，充分结合ui5中的model进行数据绑定，构造清晰的MVC模式完成功能',
-                        '对monitor项目中，通过字段配置实现定制化的动态校验，自动转换大小写；在组件不支持自定义class的情况下，通过固有前缀+动态id，配合css中属性选择器实现样式的改变；需要使用currency自动格式化货币展示，又需要objectStatus颜色的加粗的提示，使用两个组件结合，new Currency 得到格式化后的值，再丢入objectStatus组件中去渲染',
-                        'CAP项目中，由后台的函数钩子处理的last change on字段，在页面上修改其他data之后，last change on字段并没有得到刷新。判断请求，手动刷新objectpage页面的数据请求',
+                        '对【freestyle】模式下，了解运行原理，并对其框架进行改造升级，分别对eslint校验的配置，karma运行单元测试获取代码覆盖率，基于grunt打包增加less编译css，浏览器自动刷新（watch + livereload），增加babel转义打包，使其适配es6+的新技术，并前端内部进行了技术分享',
+                        '在【freestyle】模式中，调研并实现了基于UI5的单元格编辑，自定义的列筛选、数据排序、数据过滤功能，充分结合ui5中的model进行数据绑定，构造清晰的MVC模式完成功能',
+                        '对【freestyle】模式中，通过字段配置实现定制化的动态校验，自动转换大小写；在组件不支持自定义class的情况下，通过固有前缀+动态id，配合css中属性选择器实现样式的改变；需要使用currency自动格式化货币展示，又需要objectStatus颜色的加粗的提示，使用两个组件结合，new Currency 得到格式化后的值，再丢入objectStatus组件中去渲染',
+                        '【CAP】项目中，由后台的函数钩子处理的last change on字段，在页面上修改其他data之后，last change on字段并没有得到刷新。判断请求，手动刷新objectpage页面的数据请求',
                         '针对protractor和selenium自动化测试进行调研研究，封装测试框架，划分po/spec两大文件夹，po中存放common基础类（主要封装方法，例如：公共元素定位，设置值，获取属性值，检测值，TAB,ENTER键等公共方法），以及扩展类listpage/objectpage/portalpage，扩展类中主要使用browser.wait异步等待，避免直接sleep，在非angular程序中，使用browser.waitForAngularEnabled(false);在逻辑层面，做出闭环操作，并对可能意外出现的脏数据进行了清理的保护措施',
-                        "sap framework 在js中处理i18n message的时候，如果有参数时，会将单撇号`'`丢失，需要用双撇才能解决。没有参数的时候又处理正常。 查阅源码之后，在工程中写了一个中转处理函数，使功能正确。"
+                        '使用webdriverIO进行自动化测试，封装个性化的操作命令和键盘操作事件，调整目录结构以达层次分明的效果',
+                        '在general中根据配置使不同searchHelpDialog动态生成，匹配不同的数据源'
                     ]
                 }
             ]

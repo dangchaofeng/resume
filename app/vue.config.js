@@ -6,7 +6,7 @@
  * @LastEditTime: 2019-03-09 14:15:17
  */
 module.exports = {
-  baseUrl: process.env.NODE_ENV === 'production' ? '/resume/dist/' : '/',
-  // 输出文件目录
-  outputDir: '../dist',
-}
+    publicPath: process.env.NODE_ENV === 'production' ? '/resume/dist/' : '/',
+    // 输出文件目录
+    outputDir: '../dist'
+};
