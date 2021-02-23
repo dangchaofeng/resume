@@ -65,7 +65,7 @@ const info = {
                         '了解学习了虚拟列表的概念，并通过vue和react实现自己的虚拟列表',
                         '个人小项目练习使用：koa + mongodb 来实现自己的后台系统， 前端使用 vue + elementUI',
                         '发现async/await语法函数中，形参中涉及当前上下文的，在await之后，会被洗刷掉',
-                        '深刻体会到：团队内部代码规范的重要性'
+                        '深刻体会到：团队内部代码规范的重要性，以及typescript的强大，强壮团队的代码'
                     ]
                 }
             ],
@@ -184,7 +184,8 @@ const info = {
                         '【CAP】项目中，由后台的函数钩子处理的last change on字段，在页面上修改其他data之后，last change on字段并没有得到刷新。判断请求，手动刷新objectpage页面的数据请求',
                         '针对protractor和selenium自动化测试进行调研研究，封装测试框架，划分po/spec两大文件夹，po中存放common基础类（主要封装方法，例如：公共元素定位，设置值，获取属性值，检测值，TAB,ENTER键等公共方法），以及扩展类listpage/objectpage/portalpage，扩展类中主要使用browser.wait异步等待，避免直接sleep，在非angular程序中，使用browser.waitForAngularEnabled(false);在逻辑层面，做出闭环操作，并对可能意外出现的脏数据进行了清理的保护措施',
                         '使用webdriverIO进行自动化测试，封装个性化的操作命令和键盘操作事件，调整目录结构以达层次分明的效果',
-                        '在general中根据配置使不同searchHelpDialog动态生成，匹配不同的数据源'
+                        '在general中根据配置使不同searchHelpDialog动态生成，匹配不同的数据源',
+                        '【freestyle】模式下，对其框架进行改造升级为ts项目，适配本地开发及打包流程，单元测试'
                     ]
                 }
             ]
